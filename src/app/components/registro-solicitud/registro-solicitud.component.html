@@ -1,0 +1,57 @@
+<!-- registro-solicitud.component.html -->
+
+<!-- Formulario de registro -->
+<form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="cedulaCliente">Cédula Cliente:</label>
+      <input type="text" id="cedulaCliente" name="cedulaCliente" [(ngModel)]="solicitud.cedulaCliente" required>
+    </div>
+  
+    <div>
+      <label for="nombreCliente">Nombre Cliente:</label>
+      <input type="text" id="nombreCliente" name="nombreCliente" [(ngModel)]="solicitud.nombreCliente" required>
+    </div>
+  
+    <div>
+      <label for="correoElectronico">Correo Electrónico:</label>
+      <input type="email" id="correoElectronico" name="correoElectronico" [(ngModel)]="solicitud.correoElectronico" required>
+    </div>
+  
+    <div>
+      <label for="monto">Monto (USD):</label>
+      <input type="number" id="monto" name="monto" [(ngModel)]="solicitud.monto" required>
+    </div>
+  
+    <div>
+      <label for="meses">Meses:</label>
+      <input type="number" id="meses" name="meses" [(ngModel)]="solicitud.meses" required>
+    </div>
+  
+    <button type="submit">Registrar Solicitud</button>
+  </form>
+  
+  <hr>
+  
+  <!-- Lista de solicitudes -->
+  <h2>Lista de Solicitudes</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Cédula Cliente</th>
+        <th>Nombre Cliente</th>
+        <th>Correo Electrónico</th>
+        <th>Monto (USD)</th>
+        <th>Meses</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let solicitud of solicitudes">
+        <td>{{ solicitud.cedulaCliente }}</td>
+        <td>{{ solicitud.nombreCliente }}</td>
+        <td>{{ solicitud.correoElectronico }}</td>
+        <td>{{ solicitud.monto }}</td>
+        <td>{{ solicitud.meses }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

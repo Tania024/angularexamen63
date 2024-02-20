@@ -1,0 +1,10 @@
+export class Solicitudes {
+    public id?: number;
+    public cedulaCliente?: string;
+    public nombreCliente?: string;
+    public correoElectronico?: string;
+    public fecha?: Date;
+    public monto?: number;
+    public mese?: number;
+
+}
